@@ -1,0 +1,62 @@
+# setting up a blog : 
+# https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/
+site_name: My mkdocs blog
+docs_dir: blog
+repo_url:
+repo_name:
+
+nav:
+  - Home:
+    - index.md
+
+# *********
+plugins:
+  - blog:
+      blog_dir: .
+
+# *********
+
+theme:
+ name: material
+
+ features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.footer
+    - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - navigation.tabs.sticky
+
+ palette:
+ - media: '(prefers-color-scheme: light)'
+   scheme: default
+   accent: red
+   toggle:
+     icon: material/brightness-7
+     name: Switch to dark mode
+ - media: '(prefers-color-scheme: dark)'
+   scheme: slate
+   primary: black
+   accent: lime
+   toggle:
+     icon: material/brightness-4
+     name: Switch to light mode
+
+# *********
+
+markdown_extensions:
+ - pymdownx.highlight:
+     anchor_linenums: true
+     line_spans: __span
+     pygments_lang_class: true
+ - pymdownx.inlinehilite
+ - pymdownx.snippets
+ - pymdownx.superfences
+ - md_in_html
+ - attr_list
+ - admonition
+ - footnotes
+ - toc:
+     permalink: '@'
+
